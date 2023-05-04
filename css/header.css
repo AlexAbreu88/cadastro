@@ -1,59 +1,130 @@
-    .header {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 25px;
-        background-color: #FFBA00;;
-    }
-    
-    .header ul {
-        display: flex;
-        gap:1px;
-    }
+/*####################->HEADER<-#####################*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .header ul li {
-        list-style: none;
-        background-color: aquamarine;
-        padding: 10px;
-        border-radius: 3px;
-    }
-    
-    .header ul li:hover {
-        background-color: aqua;
-        cursor: pointer;
-    }
-    
-    /*Controla o menu*/
-    .menu {
-        list-style:none;
-        border:1px solid #c0c0c0;
-        float:left;
-    }
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
-    .menu li {
-        position:relative;
-        float:left;
-        border-right:1px solid #c0c0c0;
-    }
+.header {
+    width: 100vw;
+    background-color: var(--primary-color);
+    border-bottom: 1px solid white;
+    line-height: 40px;
+    position: fixed;
+    top: 0;
+}
 
-    .menu li ul {
-        position:absolute;
-        top:40px;
-        left:0;
-        background-color:aqua;
-        display:none;
-    }
+.header ul {
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--primary-color);
+}
 
-    /*mostra o menu no hover*/
-    .menu li:hover ul, .menu li.over ul {
-        display:flex;
-        flex-direction: column;
-    }
+.header ul li {
+    list-style: none;
+    background-color: aquamarine;
+    border-radius: 3px;
+    padding: 2px;
+    transition: box-shadow .6s ease;
+}
 
-    .menu li ul li{
-        border:1px solid #c0c0c0;
-        display:block;
-        width:150px;
-    }
+.header ul li:hover {
+    background-color: aqua;
+    cursor: pointer;
+    box-shadow: inset 200px 0 0 #00000055;
+}
+
+.header ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    list-style: none;
+    color: black;
+}
+
+/*Controla o menu*/
+.menu {
+    list-style:none;
+    /**border:1px solid #c0c0c0; */
+    border:1px solid black;
+    float:left;
+    background-color: var(--primary-color);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    position:relative;
+    float:left;
+    border:1px solid white;
+    padding: 2px;
+    width: 100px;
+}
+
+.menu li ul {
+    position:absolute;
+    left:0;
+    background-color:aqua;
+    display:none;
+}
+
+/*mostra o menu no hover*/
+.menu li:hover ul, .menu li.over ul {
+    display:flex;
+    flex-direction: column;
+}
+
+.menu li ul li{
+    border:1px solid #c0c0c0;
+    display:block;
+    width:150px;
+}
+
+/*####################->CAPTION TABELA<-#####################*/
+caption {
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+/*####################->FOOTER<-#####################*/
+.footer {
+    width: 100vw;
+    height: 40px;
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    color: black;
+    font-size:22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    width: 100%;
+}
+
+main {
+    width: 90%;
+    height: 80%;
+    flex-grow: 1;
+}
+
+.header-title-consulta {
+    width: 100%;
+}

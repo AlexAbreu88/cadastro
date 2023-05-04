@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/login.js" defer></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="modal active" id="modal-login">
+        <div class="modal-content" style="width: 40%">
+            <header class="modal-header">
+                <h2>Login</h2>
+                <span class="modal-close" id="modalCloseLogin">&#10006;</span>
+            </header>
+            <form id="form" class="modal-form" style="justify-content: center;">
+                <input type="email" id="email" class="modal-field" placeholder="E-mail..." required
+                    value="joao@email.com">
+
+                <input type="password" id="senha" class="modal-field" placeholder="Senha..." required value="3456">
+            </form>
+            <footer class="modal-footer" id="modal-footer-login" style="width: 100%">
+                <button id="salvarLogin" class="button green">Entrar</button>
+                <button id="cancelarLogin" class="button blue">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
