@@ -10,8 +10,12 @@ function logout() {
         if (xhr.status != 200) {
             alert(`Erro ${xhr.status}: ${xhr.statusText}`);
         } else {
+            // debugger;
             // Processa a resposta do script PHP
             console.log(xhr.response);
+            setTimeout(function () {
+                parent.location.href = 'index.php#home';
+            }, 100);
         }
     };
 }
