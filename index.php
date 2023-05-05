@@ -1,4 +1,3 @@
 <?php
 
-require_once ("Home.php");
-// require_once("inserirUsuario.php");
+require_once('intro.html');

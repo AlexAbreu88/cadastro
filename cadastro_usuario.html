@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+</head>
+
+<body>
+    <div>
+        <form id="myForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <div>
+        <button onclick="getData()">Carregar</button>
+        <label>Nome:</label> <span id="nome">a</span>
+        <label>E-mail:</label> <span id="e-mail">b</span>
+    </div>
+</body>
+<script src="js/salvar.js"></script>
+<script src="js/carregar.js"></script>
+
+</html>

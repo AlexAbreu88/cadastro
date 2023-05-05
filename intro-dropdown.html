@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Modelo de abertura de sessão com dropdown</title>
+</head>
+
+<body>
+
+    <head>
+        <div class="navbar">
+            <a href="#home" id="home-link">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#" data-section="secao1">Link 1</a>
+                    <a href="#" data-section="secao2">Link 2</a>
+                    <a href="#" data-section="secao3">Link 3</a>
+                </div>
+            </div>
+        </div>
+    </head>
+    <section id="home">
+        <h1>Home</h1>
+        <p>Conteúdo da página inicial</p>
+    </section>
+    <section id="secao1" style="display: none;">
+        <h1>Sessão Home</h1>
+        <p>Conteúdo da seção Home</p>
+    </section>
+    <section id="secao2" style="display: none;">
+        <h1>Seção 2</h1>
+        <p>Conteúdo da seção 2</p>
+    </section>
+    <section id="secao3" style="display: none;">
+        <h1>Seção 3</h1>
+        <p>Conteúdo da seção 3</p>
+    </section>
+
+    <footer>
+
+    </footer>
+
+</body>
+<script src="js/dropdown.js"></script>
+</html>
