@@ -25,10 +25,10 @@ Segue algumas capturas da tela do sistema desenvolvido:
 
 ![Tela de cadastro de usuário do sistema](imagens/tela_cadastro_sistema_curriculo.png)
 
-![Tela de Cadastro do currículo 01](imagens/tela_curriculo_sessao_cadastro01_sistema_curriculo)
+![Tela de Cadastro do currículo 01](imagens/tela_curriculo_sessao_cadastro01_sistema_curriculo.png)
 
-![Tela de Cadastro do currículo 02](imagens/tela_curriculo_sessao_cadastro02_sistema_curriculo)
+![Tela de Cadastro do currículo 02](imagens/tela_curriculo_sessao_cadastro02_sistema_curriculo.png)
 
-![Tela de Administrativa do Sistema](imagens/tela_administrativa_análise_dados_sistema_curriculo)
+![Tela de Administrativa do Sistema](imagens/tela_administrativa_análise_dados_sistema_curriculo.png)
 
 
