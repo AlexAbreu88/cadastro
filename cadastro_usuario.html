@@ -10,23 +10,47 @@
 
 <body>
     <div>
-        <form id="myForm">
+        <form id="form_usuario">
+            <input type="hidden" id="user_id" name="user_id">
             <label for="name">Nome:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name">
+            <label for="CPF">CPF:</label>
+            <input type="text" id="CPF" name="CPF">
+            <label for="data_nascimento">Data de Nascimento:</label>
+            <input type="date" id="data_nascimento" name="data_nascimento">
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo">
+                <option value="" selected></option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Não Informar">Não Informar</option>
+            </select>
+            <label for="estado_civil">Estado Civil:</label>
+            <select name="estado_civil" id="estado_civil">
+                <option value="" selected></option>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divorciado">Divorciado(a)</option>
+                <option value="viuvo">Viúvo(a)</option>
+                <option value="União Estavel">União Estavel</option>
+            </select>
+            <label for="tipo_usuario">Tipo de Usuário:</label>
+            <select name="tipo_usuario" id="tipo_usuario">
+                <option value="0" selected>Cliente</option>
+                <option value="1">Administrador</option>
+            </select>
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
+            <input type="text" id="email" name="email">
             <label for="password">Senha:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="submit" value="Enviar">
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Cadastrar Usuário">
+            <button type="button" onclick="pesquisarUsuario()">Pesquisar Usuário</button>
+            <button type="button" onclick="editarUsuario(form, usuarioId)">Editar Usuário</button>
+            <button type="button" onclick="excluirUsuario(form, usuarioId)">Excluir Usuário</button>
         </form>
     </div>
-    <div>
-        <button onclick="getData()">Carregar</button>
-        <label>Nome:</label> <span id="nome">a</span>
-        <label>E-mail:</label> <span id="e-mail">b</span>
-    </div>
+
 </body>
-<script src="js/salvar.js"></script>
-<script src="js/carregar.js"></script>
+<script src="js/crud_usuario.js"></script>
 
 </html>

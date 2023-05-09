@@ -1,62 +1,190 @@
+/* Variáveis com definição das cores */
+:root {
+  --fundo-menu: rgb(51, 51, 51);
+  --cor-texto-menu: rgb(255, 255, 255);
+  --abaixo-media-salarial: rgb(0, 150, 0);
+  --acima-media-salarial: rgb(0, 150, 200);
+}
+
 /* Menu Dropdown */
 .navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  
-  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: red;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .show {
-    display: block;
-  }
+  overflow: hidden;
+  background-color: var(--fundo-menu);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: var(--cor-texto-menu);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--cor-texto-menu);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn,
+.dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+/* Função Tabela Área Administrativa */
+
+.verde {
+  color: var(--abaixo-media-salarial);
+}
+
+.azul {
+  color: var(--acima-media-salarial);
+}
+
+/* Relatório Currículo */
+
+.esconder {
+  display: none;
+}
+
+.estilo_legenda {
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+}
+
+.menu_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  margin-left: 2%;
+  border: 10px solid blue;
+  border-radius: 5%;
+  padding-top: 12px;
+  background-color: rgb(134, 134, 134);
+}
+
+.nome_curriculo {
+  text-align: center;
+}
+
+.iniciais {
+  color: blue;
+}
+
+.nome_social {
+  color: rgb(0, 174, 255);
+}
+
+.futuro {
+  display: none;
+}
+
+.link {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white;
+  padding: 10px;
+  font-size: 15px;
+  color: rgb(0, 155, 100);
+}
+
+a {
+  color: rgb(0, 155, 100);
+}
+
+button[name="drop"] {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white;
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+.menu-drop {
+  display: inline-block;
+  position: relative;
+}
+
+.drop-content {
+  display: none;
+  background-color: #7ac6e4;
+  position: absolute;
+  z-index: 1;
+}
+
+.drop-content a {
+  color: white;
+  padding: 8px 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-content a:hover {
+  background-color: rgb(111, 163, 201);
+}
+
+.menu-drop:hover .drop-content {
+  display: block;
+}
+
+.menu-drop:hover button[name="drop"] {
+  background-color: #0096a6;
+  color: white;
+}

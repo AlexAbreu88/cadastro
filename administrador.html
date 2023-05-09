@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Painel do Administrador</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a id="usuario_logado_container">Bem vindo, <span id="usuario_logado"></span> escolha uma das opções ao
+                lado:</a>
+            <a href="#analises" id="analises-link">Análises de Dados</a>
+            <a href="#relatorio" id="relatorio-link">Criar Relatório</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">Configurações</button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#" data-section="secao1">Perfil do Administrador</a>
+                    <a href="#" data-section="secao2">Setup</a>
+                    <a href="#" data-section="secao3">Sobre</a>
+                </div>
+            </div>
+            <button onclick="logout()">Sair</button>
+        </div>
+    </header>
+
+    <section id="analises">
+        <div class="container-tabela">
+            <h1>Tipos de Filtro</h1>
+            <label for="coluna-tabela">Nome da Coluna</label>
+            <select name="coluna-tabela" id="coluna-tabela">
+                <option value="0" selected></option>
+                <option value="1">Curriculo ID</option>
+                <option value="2">Título</option>
+                <option value="3">Escolaridade</option>
+                <option value="4">Pretensão Salarial</option>
+                <option value="5">Dia/Hora e Local</option>
+                <option value="6">Usuário ID</option>
+            </select>
+            <label for="classificar-tabela">Ordem</label>
+            <select name="classificar-tabela" id="classificar-tabela">
+                <option value="0" selected></option>
+                <option value="1">Maior</option>
+                <option value="2">Menor</option>
+                <option value="2">Igual</option>
+            </select>
+            <input style="width: 200px;" type="text" id="valor" name="valor" placeholder="Informe o filtro...">
+            <button type="button" id="consultarDados" onclick="consultarDados()">Consultar</button>
+            <button type="button" id="limparDados" onclick="limparDados()">Limpar</button>
+            <table class="tabela">
+                <h1>Analises de Dados dos Currículos Registrados</h1>
+                <label for="media-proposta-salarial">Média Proposta Salarial</label>
+                <span id="media-proposta-salarial"></span>
+                <label for="soma-proposta-salarial">Total Proposta Salarial</label>
+                <span id="soma-proposta-salarial"></span>
+                <thead>
+                    <tr>
+                        <th>Curriculo ID</th>
+                        <th>Título</th>
+                        <th>Escolaridade</th>
+                        <th>Pretensão Salarial</th>
+                        <th>Dia/Hora e Local</th>
+                        <th>Usuário ID</th>
+                    </tr>
+                </thead>
+                <tbody class="corpo-tabela">
+                </tbody>
+            </table>
+        </div>
+        <span id="current_date"></span>
+    </section>
+
+
+    <section id="relatorio" style="display: none;">
+        <formmethod="post">
+            <label for=""></label>
+            <label for=""></label>
+            <label for=""></label>
+            <label for=""></label>
+            <label for=""></label>
+
+            <div>
+                <button onclick="getData()">Carregar</button>
+                <label>Nome:</label> <span id="nome">a</span>
+                <label>E-mail:</label> <span id="e-mail">b</span>
+            </div>
+
+            </form>
+    </section>
+
+    <section id="secao1" style="display: none;">
+        <h1>Sessão Perfil do Administrador</h1>
+        <p>Conteúdo da seção Perfil do Administrador</p>
+    </section>
+
+    <section id="secao2" style="display: none;">
+        <h1>Seção Setup</h1>
+        <p>Conteúdo da seção Setup</p>
+    </section>
+
+    <section id="secao3" style="display: none;">
+        <h1>Seção Sobre</h1>
+        <p>Conteúdo da seção Sobre</p>
+    </section>
+
+    <footer>
+        <div class="container-rodape">
+            Copyright by <a href="http://alexabreu.dev.br">Alex Abreu</a> © - Furious Storm
+            <span class="rodape"></span>
+        </div>
+    </footer>
+</body>
+<script src="js/dropdown-admin.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/geolocal.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/rodape.js"></script>
+
+</html>

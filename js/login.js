@@ -6,12 +6,9 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
     // Cria um objeto FormData a partir do formulário
     var formData = new FormData(form);
-
-    // console.log(formData);
     // Cria um objeto XMLHttpRequest
     var xhr = new XMLHttpRequest();
     // Abre uma conexão com o script PHP
-    // debugger;
     xhr.open('POST', 'login.php');
     // Envia os dados do formulário
     xhr.send(formData);
@@ -21,15 +18,13 @@ form.addEventListener('submit', function (event) {
             alert(`Erro ${xhr.status}: ${xhr.statusText}`);
         } else {
             // Processa a resposta do script PHP
-            console.log(xhr.response);
-            // console.log('Redirecionando para curriculo.php');
-            parent.window.location.href = 'curriculo.php';
+            var response = JSON.parse(xhr.response);
+            console.log(response.message);
+            if (response.userType == 0) {
+                parent.window.location.href = 'curriculo.php';
+            } else if (response.userType == 1) {
+                parent.window.location.href = 'admin.php';
+            }
         }
     };
 });
-
-function sumirH1() {
-    parent.document.getElementById('meuH1').style.display = 'none';
-    parent.history.pushState(null, '', '#curriculo');
-    parent.document.title = "Currículo";
-}

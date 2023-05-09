@@ -15,5 +15,6 @@ $username = $_SESSION['user_username'];
 <input type="hidden" id="user_id" value="<?php echo $userId; ?>">
 <input type="hidden" id="user_username" value="<?php echo $username; ?>">
 <?php
+
 // Inclui o conteúdo do arquivo curriculo_form.html
-include('curriculo_form.html');
+include('administrador.html');
