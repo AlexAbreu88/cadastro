@@ -1,5 +1,5 @@
 function addEspecializacao() {
-    const div = document.querySelector('.cursos_especializacoes');
+    const div = document.querySelector('.objetosEspecializacao');
 
     // Criar label e input para o título da especialização
     const labelTitulo = document.createElement('label');
@@ -21,7 +21,7 @@ function addEspecializacao() {
 }
 
 function addExperiencia() {
-    const div = document.querySelector('.exp_profissional');
+    const div = document.querySelector('.objetosExperiencia');
 
     // Criar label e input para o título da experiência
     const labelTitulo = document.createElement('label');
@@ -43,7 +43,7 @@ function addExperiencia() {
 }
 
 function removeEspecializacao() {
-    const div = document.querySelector('.cursos_especializacoes');
+    const div = document.querySelector('.objetosEspecializacao');
     const inputs = div.querySelectorAll('input');
     if (inputs.length > 1) {
         // Remover input e label da descrição da especialização
@@ -64,7 +64,7 @@ function removeEspecializacao() {
 }
 
 function removeExperiencia() {
-    const div = document.querySelector('.exp_profissional');
+    const div = document.querySelector('.objetosExperiencia');
     const inputs = div.querySelectorAll('input');
     if (inputs.length > 1) {
         // Remover input e label da descrição da experiência

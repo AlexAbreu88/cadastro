@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px grey;
+    width: 35vw;
+    padding: 5px;
+}
+
+form .linha {
+    border: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    width: 150px;
+    text-align: right;
+}
+
+select {
+    color: blue;
+    font-weight: bolder;
+    text-align: center;
+    width: 158px;
+    height: 25px;
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+select:hover {
+    background-color: gray;
+}
+
+input[type="text"] {
+    color: blue;
+    font-weight: bolder;
+    text-align: center;
+    width: 150px;
+    height: 18px;
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+input[type="text"]:hover {
+    background-color: gray;
+}
+
+input[type="password"] {
+    color: green;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+    width: 150px;
+    height: 18px;
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+input[type="password"]:hover {
+    background-color: gray;
+}
+
+input[type="date"] {
+    color: peru;
+    text-align: center;
+    vertical-align: middle;
+    width: 152px;
+    height: 18px;
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+input[type="date"]:hover {
+    background-color: gray;
+}
+
+input[type="submit"] {
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+input[type="submit"]:hover {
+    color: aliceblue;
+    background-color: darkblue;
+}
+
+button {
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+
+button:hover {
+    color: aliceblue;
+    background-color: darkblue;
+}
+#btnexcluir:hover {
+    color: aliceblue;
+    background-color: darkred;
+}

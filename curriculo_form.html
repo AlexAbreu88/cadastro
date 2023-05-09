@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="navbar">
             <a id="usuario_logado_container">Bem vindo, <span id="usuario_logado"></span> escolha uma das opções ao
@@ -28,74 +27,63 @@
                     <a href="#" data-section="secao3">Sobre</a>
                 </div>
             </div>
-            <button onclick="logout()">Sair</button>
+            <button class="btnmenu" onclick="aumentarFonte()">Aumentar fonte</button>
+            <button class="btnmenu" onclick="diminuirFonte()">Diminuir fonte</button>
+            <button class="btnmenu" id="btnsair" onclick="logout()">Sair</button>
         </div>
     </header>
-
     <section id="curriculo-form">
+        <div class="formulario">
+            <div class="container-menu">
+                <label for="tipo_curriculo">Escolher Currículo</label>
+                <select name="tipo_curriculo" id="tipo_curriculo" onchange="buscarDadosCurriculo()">
+                </select>
 
-        <div class="container-menu">
-            <label for="tipo_curriculo">Escolher Currículo</label>
-            <select name="tipo_curriculo" id="tipo_curriculo" onchange="buscarDadosCurriculo()">
-            </select>
-
-            <button id="add_cv" onclick="cadastroCurriculo()">Cadastrar Novo Currículo</button>
-            <button disabled id="edit_cv" onclick="editarCurriculo()">Editar Currículo Selecionado</button>
-            <button disabled id="excluir_cv" onclick="excluirCurriculo()">Excluir Currículo Selecionado</button>
-            <!-- <button id="limpar-tabelas" onclick="limparTabelas()">Limpar as Tabelas de Currículo</button> -->
+                <button id="add_cv" onclick="cadastroCurriculo()">Cadastrar Novo Currículo</button>
+                <button disabled id="edit_cv" onclick="editarCurriculo()">Editar Currículo Selecionado</button>
+                <button disabled id="excluir_cv" onclick="excluirCurriculo()">Excluir Currículo Selecionado</button>
+                <!-- <button id="limpar-tabelas" onclick="limparTabelas()">Limpar as Tabelas de Currículo</button> -->
+            </div>
+            <div class="escolaridade_pretensaoSalarial">
+                <label for="nivel-escolaridade">Escolaridade</label>
+                <select name="nivel-escolaridade" id="nivel-escolaridade">
+                    <option value="0" selected></option>
+                    <option value="1">Ensino Fundamental Completo</option>
+                    <option value="2">Ensino Fundamental Incompleto</option>
+                    <option value="3">Ensino Médio Completo</option>
+                    <option value="4">Ensino Médio Incompleto</option>
+                    <option value="5">Ensino Superior Completo</option>
+                    <option value="6">Ensino Superior Incompleto</option>
+                    <option value="7">Pós Graduação Completo</option>
+                    <option value="8">Pós Graduação Incompleto</option>
+                    <option value="9">Mestrado Completo</option>
+                    <option value="10">Mestrado Incompleto</option>
+                    <option value="11">Doutorado Completo</option>
+                    <option value="12">Doutorado Incompleto</option>
+                </select>
+                <label for="pretensao_salarial">Pretenção Salarial</label>
+                <input type="number" name="pretensao_salarial" id="pretensao_salarial" required>
+            </div>
+            <div class="cursos_especializacoes">
+                <button id="addEspecializacao" onclick="addEspecializacao()">Adicionar Novo
+                    Curso/Especialização</button>
+                <button id="removeEspecializacao" onclick="removeEspecializacao()" disabled>Remover
+                    Curso/Especialização</button>
+                <div class="objetosEspecializacao"></div>
+            </div>
+            <div class="exp_profissional">
+                <button id="addExperiencia" onclick="addExperiencia()">Adicionar Nova Experiência Profissional</button>
+                <button id="removeExperiencia" onclick="removeExperiencia()" disabled>Remover Experiência
+                    Profissional</button>
+                <div class="objetosExperiencia"></div>
+            </div>
+            <span id="current_date"></span>
         </div>
-
-        <label for="nivel-escolaridade">Escolaridade</label>
-        <select name="nivel-escolaridade" id="nivel-escolaridade">
-            <option value="0" selected></option>
-            <option value="1">Ensino Fundamental Completo</option>
-            <option value="2">Ensino Fundamental Incompleto</option>
-            <option value="3">Ensino Médio Completo</option>
-            <option value="4">Ensino Médio Incompleto</option>
-            <option value="5">Ensino Superior Completo</option>
-            <option value="6">Ensino Superior Incompleto</option>
-            <option value="7">Pós Graduação Completo</option>
-            <option value="8">Pós Graduação Incompleto</option>
-            <option value="9">Mestrado Completo</option>
-            <option value="10">Mestrado Incompleto</option>
-            <option value="11">Doutorado Completo</option>
-            <option value="12">Doutorado Incompleto</option>
-        </select>
-
-        <label for="pretensao_salarial">Pretenção Salarial</label>
-        <input type="number" name="pretensao_salarial" id="pretensao_salarial" required>
-
-        <div class="cursos_especializacoes">
-            <button id="addEspecializacao" onclick="addEspecializacao()">Adicionar Novo Curso/Especialização</button>
-            <button id="removeEspecializacao" onclick="removeEspecializacao()" disabled>Remover
-                Curso/Especialização</button>
-        </div>
-
-        <div class="exp_profissional">
-            <button id="addExperiencia" onclick="addExperiencia()">Adicionar Nova Experiência Profissional</button>
-            <button id="removeExperiencia" onclick="removeExperiencia()" disabled>Remover Experiência
-                Profissional</button>
-        </div>
-
-        <hr>
-        <span id="current_date"></span>
     </section>
 
     <section id="curriculo-relatorio" style="display: none;">
-        <formmethod="post">
-            <label for=""></label>
-            <label for=""></label>
-            <label for=""></label>
-            <label for=""></label>
-            <label for=""></label>
-
-            <div>
-                <button onclick="getData()">Carregar</button>
-                <label>Nome:</label> <span id="nome">a</span>
-                <label>E-mail:</label> <span id="e-mail">b</span>
-            </div>
-
-            </form>
+        <h1>Sessão Currículo Relatório</h1>
+        <p>Conteúdo da seção Currículo Relatório</p>
     </section>
 
     <section id="secao1" style="display: none;">
@@ -127,5 +115,6 @@
 <script src="js/geolocal.js"></script>
 <script src="js/crud.js"></script>
 <script src="js/novas-tags.js"></script>
+<script src="js/fonte.js"></script>
 
 </html>

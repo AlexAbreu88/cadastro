@@ -68,7 +68,7 @@ function consultarDados() {
 }
 
 function limparDados() {
-
+    location.reload();
 }
 
 function carregaNome() {

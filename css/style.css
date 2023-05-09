@@ -1,9 +1,30 @@
 /* Variáveis com definição das cores */
 :root {
   --fundo-menu: rgb(51, 51, 51);
+  --fundo-submenu: rgb(119, 119, 119);
   --cor-texto-menu: rgb(255, 255, 255);
-  --abaixo-media-salarial: rgb(0, 150, 0);
-  --acima-media-salarial: rgb(0, 150, 200);
+  --cor-texto-menu-usuariologado: rgb(106, 147, 0);
+  --cor-texto-menu-usuariologado-hover: rgb(183, 255, 0);
+  --fundo-botao-menu: rgb(0, 0, 139);
+  --abaixo-media-salarial: rgb(0, 255, 0);
+  --acima-media-salarial: rgb(0, 191, 255);
+  --fundo-pagina: rgb(173, 216, 230);
+  --fundo-pagina-iframe: rgb(54, 110, 128);
+  --botoes-fonte: rgb(0, 0, 0);
+  --botoes-fonte-hover: rgb(240, 248, 255);
+  --botoes-fundo: rgb(240, 240, 240);
+  --botoes-fundo-hover: rgb(0, 76, 139);
+  --cor-texto: rgb(0, 0, 0);
+  --cor-texto-form-admin-destaque: rgb(255, 170, 0);
+  --cor-texto-form: rgb(0, 94, 255);
+  --cor-texto-form-hover: rgb(0, 255, 162);
+  --inputs: rgb(255, 255, 255);
+  --inputs-hover: rgb(166, 166, 166);
+  --links: rgb(101, 0, 155);
+  --cor-fundo-tabela1: rgb(141, 141, 141);
+  --cor-fundo-tabela2: rgb(77, 77, 77);
+  --cor-borda-tabela: rgb(0, 0, 0);
+  --cor-texto-tabela: rgb(143, 205, 212);
 }
 
 /* Menu Dropdown */
@@ -13,13 +34,26 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar a {
+.navbar a,
+.btnmenu {
   float: left;
   font-size: 16px;
   color: var(--cor-texto-menu);
+  background-color: var(--fundo-menu);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border: none;
+  transition: color .5s;
+  transition: background-color .5s;
+}
+
+.navbar #usuario_logado {
+  color: var(--cor-texto-menu-usuariologado);
+}
+
+.navbar #usuario_logado:hover {
+  color: var(--cor-texto-menu-usuariologado-hover);
 }
 
 .dropdown {
@@ -39,9 +73,17 @@
   margin: 0;
 }
 
-.navbar a:hover,
+.navbar #home-link:hover,
+.navbar #cadastro-link:hover,
+.navbar #curriculo-form-link:hover,
+.navbar #curriculo-relatorio-link:hover,
+.navbar .btnmenu:hover,
 .dropdown:hover .dropbtn,
 .dropbtn:focus {
+  background-color: var(--fundo-botao-menu);
+}
+
+#btnsair:hover {
   background-color: red;
 }
 
@@ -56,7 +98,7 @@
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: var(--cor-texto-menu);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -81,110 +123,216 @@
   color: var(--acima-media-salarial);
 }
 
-/* Relatório Currículo */
+/* Corpo */
 
 .esconder {
   display: none;
 }
 
-.estilo_legenda {
-  font-weight: bolder;
+body {
+  /* font-weight: bolder; */
+  font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: x-large;
+  background: radial-gradient(var(--fundo-pagina), var(--fundo-pagina-iframe));
 }
 
-.menu_item {
+section {
+  height: 92vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  border-radius: 15px;
+  padding: 2px;
+  /* overflow: auto; */
 }
 
-.cabecalho {
+.formulario {
+  height: 92vh;
+  width: 900px;
+  margin: 0 auto;
+  border: 2px solid;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+  padding: 2px, 0, 2px, 2px;
 }
 
-.avatar {
-  margin-left: 2%;
-  border: 10px solid blue;
-  border-radius: 5%;
-  padding-top: 12px;
-  background-color: rgb(134, 134, 134);
-}
-
-.nome_curriculo {
-  text-align: center;
-}
-
-.iniciais {
-  color: blue;
-}
-
-.nome_social {
-  color: rgb(0, 174, 255);
-}
-
-.futuro {
-  display: none;
-}
-
-.link {
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: white;
+.formulario .container-menu,
+.formulario .container-menu-tabela {
   padding: 10px;
-  font-size: 15px;
-  color: rgb(0, 155, 100);
+  border: 1px solid;
+  border-color: black;
+  border-radius: 15px;
+  overflow: hidden;
+  color: var(--cor-texto-menu);
+  background-color: var(--fundo-menu);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  color: rgb(0, 155, 100);
+.formulario .container-menu-tabela select,
+.formulario .container-menu-tabela input,
+.formulario .container-menu-tabela label,
+.formulario .container-titulo-tabela h1,
+.formulario .container-titulo-tabela span,
+.formulario .container-titulo-tabela label {
+  width: 188px;
 }
 
-button[name="drop"] {
-  border: none;
-  cursor: pointer;
+.formulario input,
+.formulario select,
+.formulario .container-menu input,
+.formulario .container-menu select,
+.formulario .escolaridade_pretensaoSalarial input,
+.formulario .escolaridade_pretensaoSalarial select,
+.formulario .cursos_especializacoes input,
+.formulario .cursos_especializacoes select,
+.formulario .exp_profissional input,
+.formulario .exp_profissional select {
+  width: 100%;
+  text-align: center;
+  transition: color .5s;
+  transition: background-color .5s;
+  color: var(--cor-texto-form);
+  background-color: var(--inputs);
+}
+
+.formulario input:hover,
+.formulario select:hover,
+.formulario .container-menu input:hover,
+.formulario .container-menu select:hover,
+.formulario .escolaridade_pretensaoSalarial input:hover,
+.formulario .escolaridade_pretensaoSalarial select:hover,
+.formulario .cursos_especializacoes input:hover,
+.formulario .cursos_especializacoes select:hover,
+.formulario .exp_profissional input:hover,
+.formulario .exp_profissional select:hover {
+  color: var(--cor-texto-form-hover);
+  background-color: var(--inputs-hover);
+}
+
+.formulario button,
+.formulario .container-menu button,
+.formulario .escolaridade_pretensaoSalarial button,
+.formulario .cursos_especializacoes button,
+.formulario .exp_profissional button {
+  transition: color .5s;
+  transition: background-color .5s;
+  color: var(--botoes-fonte);
+  background-color: var(--botoes-fundo);
+}
+
+.formulario button:hover,
+.formulario .container-menu button:hover,
+.formulario .escolaridade_pretensaoSalarial button:hover,
+.formulario .cursos_especializacoes button:hover,
+.formulario .exp_profissional button:hover {
+  color: var(--botoes-fonte-hover);
+  background-color: var(--botoes-fundo-hover);
+}
+
+.formulario .escolaridade_pretensaoSalarial,
+.formulario .container-tabela {
+  width: 100%;
+  max-width: 900px;
+  overflow: auto;
+  border-bottom: 2px solid;
+  padding-bottom: 2px;
+  text-align: center
+}
+
+.formulario .cursos_especializacoes,
+.formulario .exp_profissional {
+  width: 100%;
+  max-width: 900px;
+  height: 300px;
+  overflow: auto;
+  border-bottom: 2px solid;
+  text-align: center
+}
+
+.formulario .container-titulo-tabela {
+  width: 100%;
+  max-width: 900px;
+  height: 50px;
+  border-bottom: 2px solid;
+  text-align: center
+}
+
+.formulario .container-titulo-tabela h1,
+.formulario .container-titulo-tabela label,
+.formulario .container-titulo-tabela span {
+  width: 100%;
+  height: 28px;
+}
+
+#media-proposta-salarial,
+#soma-proposta-salarial {
   font-weight: bold;
-  background-color: white;
-  padding: 10px;
-  font-size: 15px;
-  color: black;
+  color: var(--cor-texto-form-admin-destaque);
 }
 
-.menu-drop {
-  display: inline-block;
-  position: relative;
-}
-
-.drop-content {
-  display: none;
-  background-color: #7ac6e4;
-  position: absolute;
-  z-index: 1;
-}
-
-.drop-content a {
-  color: white;
-  padding: 8px 10px;
-  align-items: center;
+.container-tabela {
+  display: flex;
   justify-content: center;
   text-align: center;
-  text-decoration: none;
-  display: block;
+  vertical-align: middle;
 }
 
-.drop-content a:hover {
-  background-color: rgb(111, 163, 201);
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.menu-drop:hover .drop-content {
-  display: block;
+table,
+th,
+td {
+  border: 1px solid var(--cor-borda-tabela);
+  text-align: center;
+  color: var(--cor-texto-tabela);
 }
 
-.menu-drop:hover button[name="drop"] {
-  background-color: #0096a6;
-  color: white;
+tr {
+  background-color: var(--cor-fundo-tabela1);
+}
+
+tr:nth-child(even) {
+  background-color: var(--cor-fundo-tabela2);
+}
+
+th {
+  color: var(--cor-texto-menu);
+  transition: color .5s;
+  transition: background-color .5s;
+}
+
+th:hover {
+  color: var(--botoes-fonte-hover);
+  background-color: var(--botoes-fundo-hover);
+}
+
+h1,
+p,
+.formulario label,
+.formulario span {
+  color: var(--cor-texto-menu);
+}
+
+iframe {
+  border: 1px solid;
+  width: 99.9%;
+  height: 100%;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: var(--cor-texto-menu);
+}
+
+footer a {
+  color: var(--links);
 }
