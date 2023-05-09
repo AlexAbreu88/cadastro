@@ -3,12 +3,10 @@ if (navigator.geolocation) {
 } else {
     console.log("Geolocation is not supported by this browser.");
 }
-
 function showPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     var latlon = lat + "," + lon;
-
     // Use the OpenCage Geocoder to get the city name from the latitude and longitude
     fetch('config.json')
         .then(response => response.json())

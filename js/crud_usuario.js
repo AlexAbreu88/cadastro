@@ -4,7 +4,6 @@ var usuarioId = document.querySelector('#user_id');
 var CPF = document.querySelector('#CPF');
 // Chama a função cadastroUsuario() passando a referência ao formulário como argumento
 cadastroUsuario(form);
-
 function cadastroUsuario(form) {
     // Adiciona um ouvinte de evento para o envio do formulário
     form.addEventListener('submit', function (event) {
@@ -37,7 +36,6 @@ function cadastroUsuario(form) {
         };
     });
 }
-
 function pesquisarUsuario() {
     var email = prompt('Digite o e-mail usado no registro de usuário:');
     if (!email) {
@@ -71,7 +69,6 @@ function pesquisarUsuario() {
         };
     }
 }
-
 function editarUsuario(form, usuarioId) {
     var formData = new FormData(form);
     formData.append('editar', true);
@@ -90,7 +87,6 @@ function editarUsuario(form, usuarioId) {
         }
     };
 }
-
 function excluirUsuario(form, usuarioId) {
     // Exibir mensagem de confirmação
     if (confirm('Tem certeza de que deseja excluir este registro?')) {
@@ -112,7 +108,6 @@ function excluirUsuario(form, usuarioId) {
         };
     }
 }
-
 function validateForm(formData) {
     // Verifica se o campo nome está vazio
     if (!formData.get('name')) {
@@ -156,7 +151,6 @@ function validateForm(formData) {
     }
     return true;
 }
-
 function formatCPF(cpf) {
     // Remove qualquer caractere não numérico
     cpf = cpf.replace(/\D/g, '');
@@ -166,12 +160,10 @@ function formatCPF(cpf) {
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
     return cpf;
 }
-
 var cpfField = document.getElementById('CPF');
 cpfField.addEventListener('input', function () {
     this.value = formatCPF(this.value);
 });
-
 function validateCPF(cpf) {
     // Remove qualquer caractere não numérico
     cpf = cpf.replace(/\D/g, '');

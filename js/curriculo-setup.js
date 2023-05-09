@@ -1,14 +1,3 @@
-// Tipo 01 por ID
-// function mouseOver() {
-//     document.getElementById("demo").style.color = "red";
-// }
-
-// function mouseOut() {
-//     document.getElementById("demo").style.color = "black";
-// }
-
-// Tipo 02
-
 var icone_facebook = document.querySelector(".icone_facebook");
 
 icone_facebook.addEventListener("mouseover", function () {
